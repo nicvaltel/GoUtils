@@ -1,9 +1,10 @@
 package filter
 
 import (
-	"GoUtils/maybe"
-	"GoUtils/types"
 	"strconv"
+
+	"github.com/nicvaltel/GoUtils/maybe"
+	"github.com/nicvaltel/GoUtils/types"
 )
 
 func TakeFirst[A any](predicate types.Predicate[A], xs []A) maybe.Maybe[A] {
