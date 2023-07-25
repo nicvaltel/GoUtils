@@ -41,10 +41,10 @@ func (_ Nothing[A]) OrElse(a A) A {
 	return a
 }
 
-func Pure[A any](a A) Just[A] {
+func Pure[A any](a A) Maybe[A] {
 	return Just[A]{val: a}
 }
 
-func NewNothing[A any]() Nothing[A] {
+func NewNothing[A any]() Maybe[A] {
 	return Nothing[A]{}
 }
