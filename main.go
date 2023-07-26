@@ -8,6 +8,7 @@ import (
 	_ "github.com/nicvaltel/GoUtils/maybe"
 	"github.com/nicvaltel/GoUtils/test"
 	_ "github.com/nicvaltel/GoUtils/types"
+	_ "github.com/nicvaltel/GoUtils/utils"
 )
 
 func main() {
