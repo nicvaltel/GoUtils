@@ -9,7 +9,7 @@ type Maybe[A any] interface {
 }
 
 type Just[A any] struct {
-	val A
+	Val A
 }
 
 type Nothing[A any] struct {
@@ -24,7 +24,7 @@ func (_ Nothing[A]) IsJust() bool {
 }
 
 func (j Just[A]) FromJust() (A, error) {
-	return j.val, nil
+	return j.Val, nil
 }
 
 var NoElementError = errors.New("Trying to Get() from Nothing")
@@ -34,7 +34,7 @@ func (_ Nothing[A]) FromJust() (A, error) {
 }
 
 func (j Just[A]) OrElse(_ A) A {
-	return j.val
+	return j.Val
 }
 
 func (_ Nothing[A]) OrElse(a A) A {
@@ -42,7 +42,7 @@ func (_ Nothing[A]) OrElse(a A) A {
 }
 
 func Pure[A any](a A) Maybe[A] {
-	return Just[A]{val: a}
+	return Just[A]{Val: a}
 }
 
 func NewNothing[A any]() Maybe[A] {

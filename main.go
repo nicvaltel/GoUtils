@@ -14,4 +14,11 @@ import (
 func main() {
 	fmt.Println("GoUtils Testing...")
 	test.RunAllTests()
+
+	// if len(os.Args) != 2 {
+	// 	return
+	// } else {
+	// 	utils.AstPrinter(os.Args[1])
+	// }
+
 }
