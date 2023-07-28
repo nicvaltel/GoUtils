@@ -36,16 +36,33 @@ func Carry[A, B, Z any](f func(_ A, _ B) Z, a A) (g func(_ B) Z) {
 	return func(b B) Z { return f(a, b) }
 }
 
+// modification of Carry function than returns nothing
+func Carry_[A, B any](f func(_ A, _ B), a A) (g func(_ B)) {
+	return func(b B) { f(a, b) }
+}
+
 func Carry3[A, B, C, Z any](f func(_ A, _ B, _ C) Z, a A) (g func(_ B, _ C) Z) {
 	return func(b B, c C) Z { return f(a, b, c) }
+}
+
+func Carry3_[A, B, C any](f func(_ A, _ B, _ C), a A) (g func(_ B, _ C)) {
+	return func(b B, c C) { f(a, b, c) }
 }
 
 func Carry4[A, B, C, D, Z any](f func(_ A, _ B, _ C, _ D) Z, a A) (g func(_ B, _ C, _ D) Z) {
 	return func(b B, c C, d D) Z { return f(a, b, c, d) }
 }
 
+func Carry4_[A, B, C, D any](f func(_ A, _ B, _ C, _ D), a A) (g func(_ B, _ C, _ D)) {
+	return func(b B, c C, d D) { f(a, b, c, d) }
+}
+
 func Carry5[A, B, C, D, E, Z any](f func(_ A, _ B, _ C, _ D, _ E) Z, a A) (g func(_ B, _ C, _ D, _ E) Z) {
 	return func(b B, c C, d D, e E) Z { return f(a, b, c, d, e) }
+}
+
+func Carry5_[A, B, C, D, E any](f func(_ A, _ B, _ C, _ D, _ E), a A) (g func(_ B, _ C, _ D, _ E)) {
+	return func(b B, c C, d D, e E) { f(a, b, c, d, e) }
 }
 
 func AstPrinter(filename string) {
