@@ -65,6 +65,15 @@ func Carry5_[A, B, C, D, E any](f func(_ A, _ B, _ C, _ D, _ E), a A) (g func(_ 
 	return func(b B, c C, d D, e E) { f(a, b, c, d, e) }
 }
 
+func ReverseArr[A any](arr []A) []A {
+	ln := len(arr) - 1
+	out := make([]A, ln+1)
+	for i, v := range arr {
+		out[ln-i] = v
+	}
+	return out
+}
+
 func AstPrinter(filename string) {
 	fset := token.NewFileSet()
 
